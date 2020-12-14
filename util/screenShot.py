@@ -11,7 +11,7 @@ sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 file_path = os.path.dirname(os.path.dirname(__file__))
 #截图功能
 # def screenshot_config(url,headers="lang=zh_CN.UTF-8"):
-def screenshot_config(url="https://ace-test.altstory.com/login"):
+def screenshot_config(url=""):
     chrome_options = Options()
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--disable-gpu')
@@ -43,5 +43,5 @@ def screenshot(url,p_name,driver):
 
 
 if __name__ == '__main__':
-    url="https://ace-test.altstory.com/login"
+    url=""
     screenshot_config(url)

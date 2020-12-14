@@ -24,16 +24,16 @@ class MyTestCase_project(Template):
         #配置参数
         self.headers['project_group_id'] = self.project_group_id
         #填写接口的url与请求参数
-        url = 'https://ace-test.altstory.com/project/list'
+        url = ''
         data = {
-            "filter": {"project_group_id": int(self.project_group_id), "project_name": ""}
+
         }
         r = requests.post(url=url,headers=self.headers,data=json.dumps(data))
         #请求参数编写
         sys.stdout.write("\n请求url:"+str(url)+"\n请求参数:"+str(data)+'\n')
 
         # 对应的web页面截图地址
-        url_web = 'https://ace-test.altstory.com/group/list?groupId=%s' % self.project_group_id
+        url_web = '' % self.project_group_id
         screenshot(url_web, 'MyTestCase_project_testCase_list', self.driver)
         #断言
         self.assertEqual(r.status_code,200, "testError")

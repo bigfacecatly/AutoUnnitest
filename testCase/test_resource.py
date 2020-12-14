@@ -27,13 +27,13 @@ class MyTestCase_projectResource(Template):
         self.headers['project_group_id'] = self.project_group_id
         self.headers['project_id'] = self.project_id
         self.headers['belong'] = self.blong
-        url = 'https://ace-test.altstory.com/resource/upload'
+        url = ''
         files={'file': open('testCase/img/yellow_dog.jpg','rb')}
         del self.headers['Content-Type']
         r = requests.post(headers=self.headers,url=url,files=files)
         self.headers['Content-Type'] = contentType
 
-        url_web = 'https://ace-test.altstory.com/project/resource/image?groupId=%s&projectId=%s' % (self.project_group_id,self.project_id)
+        url_web = '' % (self.project_group_id,self.project_id)
         screenshot(url_web, 'MyTestCase_projectResource_testCase_upload', self.driver)
 
         sys.stdout.write("\n请求url:" + str(url) + "\n请求参数:" + str(files) + '\n')

@@ -20,24 +20,20 @@ class Template(unittest.TestCase):
 
     #接口登陆ace平台
     def login(self):
-        url = 'https://ace-test.altstory.com/passport/login'
+        url = ''
         data = {
-            'username': 'test',
-            'password': 'test',
-            'remember': 'false'
+
         }
 
         r = requests.post(url=url, data=data)
         uid, token = r.json()['data']['uid'], r.json()['data']['token']
         headers = {
-            'uid': str(uid),
-            'token': token,
-            'Content-Type': 'application/json;charset=UTF-8',
+
         }
         return headers
 
     #截图
-    def screenshot_config(self,url="https://ace-test.altstory.com/login"):
+    def screenshot_config(self,url=""):
         chrome_options = Options()
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--disable-gpu')
